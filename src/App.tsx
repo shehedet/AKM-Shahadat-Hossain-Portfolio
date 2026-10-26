@@ -23,6 +23,9 @@ function App() {
     getLayoutMode
   );
 
+  console.log("Viewport width:", window.innerWidth);
+  console.log("Selected layout:", layoutMode);
+
   useEffect(() => {
     const mediaQuery = window.matchMedia("(max-width: 1100px)");
 
