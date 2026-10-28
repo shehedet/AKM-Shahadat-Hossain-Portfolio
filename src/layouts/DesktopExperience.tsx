@@ -74,8 +74,21 @@ function DesktopExperience() {
   const [startOpen, setStartOpen] = useState(false);
   const [search, setSearch] = useState("");
   const [clock, setClock] = useState(new Date());
-  const [windows, setWindows] = useState<WindowState[]>([]);
-  const [focusedWindow, setFocusedWindow] = useState<AppId | null>(null);
+  const [windows, setWindows] = useState<WindowState[]>([
+    {
+      id: "about",
+      title: "About Me",
+      minimized: false,
+      maximized: false,
+      zIndex: 10,
+      x: 100,
+      y: 60,
+      width: 640,
+      height: 420,
+    },
+  ]);
+
+  const [focusedWindow, setFocusedWindow] = useState<AppId | null>("about");
   const [nextZIndex, setNextZIndex] = useState(10);
 
   const openWindow = (app: AppInfo) => {
